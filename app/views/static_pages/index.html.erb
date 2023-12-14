@@ -3,3 +3,7 @@
     <%= f.text_field :id%>
     <%= f.submit "Submit"%>
 <% end %>
+
+<% @photos.each do |p|%>
+    <%= image_tag(Flickr.url_n(p)) %><br>
+<% end %>
