@@ -6,4 +6,5 @@
 
 <% @photos.each do |p|%>
     <%= image_tag(Flickr.url_n(p)) %><br>
+    <%= p.title %><br>
 <% end %>
