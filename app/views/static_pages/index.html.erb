@@ -6,5 +6,9 @@
 
 <% @photos.each do |p|%>
     <%= image_tag(Flickr.url_n(p)) %><br>
-    <%= p.title %><br>
+    <%= form_with url: static_page_path(p.id), method: :get do |f|%>
+    <%= f.label :photo_id%>
+    <%= f.text_field :photo_id%>
+    <%= f.submit "Photo info"%>
+<% end %>
 <% end %>
