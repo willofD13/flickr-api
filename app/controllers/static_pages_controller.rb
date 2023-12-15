@@ -9,4 +9,9 @@ class StaticPagesController < ApplicationController
             @photos = flickr.photos.search( user_id: params[:id])
         end
     end
+
+    def show
+        flickr = Flickr.new
+        @info = flickr.photos.getInfo(photo_id: params[:photo_id])
+    end
 end
