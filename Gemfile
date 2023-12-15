@@ -36,6 +36,12 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 gem 'omniauth-flickr', '~> 0.0.20'
 
+gem 'omniauth'
+
+gem 'omniauth-github', '~> 2.0.0'
+
+gem "omniauth-rails_csrf_protection"
+
 gem 'flickr', '~> 2.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
