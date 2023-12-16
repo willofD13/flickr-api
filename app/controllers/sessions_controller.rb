@@ -4,6 +4,12 @@ class SessionsController < ApplicationController
       uid = auth_hash.uid
       name = auth_hash.info.name
       @user = User.find_or_create_by(uid: uid,name: name)
+      if @user.persisted?
+        session[:user_id] = @user.uid
+        redirect_to static_pages_path
+      else
+        redirect_to root_path
+      end
     end
 
 end
