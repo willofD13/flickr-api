@@ -9,4 +9,5 @@ Rails.application.routes.draw do
    root "homes#index"
    resources :static_pages
    get '/auth/github/callback', to: "sessions#create"
+   delete '/logout', to: "sessions#delete"
 end
