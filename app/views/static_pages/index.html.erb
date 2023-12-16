@@ -1,11 +1,12 @@
-<%= current_user.uid %>
+<%= current_user.name %>
+<%= link_to 'Logout', logout_path, data: { turbo_method: :delete }%>
 <%= form_with url: static_pages_path, method: :get do |f|%>
     <%= f.label :id%>
     <%= f.text_field :id%>
     <%= f.submit "Submit"%>
 <% end %>
 
-<% @photos.each do |p|%>
+<% @photos.first(5).each do |p|%>
     <%= image_tag(Flickr.url_n(p)) %>
     <%= form_with url: static_page_path(p.id), method: :get do |f|%>
         <%= f.hidden_field :photo_id, value: p.id %>
