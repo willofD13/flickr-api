@@ -1,6 +1,10 @@
-<%= current_user.name %>
-<%= button_to 'Sign in with Github', '/auth/github', :data => {turbo: "false"} %>
-<%= link_to 'Logout', logout_path, data: { turbo_method: :delete }%>
+<% if user_signed_in? %>
+    <%= current_user.name %>
+    <%= link_to 'Logout', logout_path, data: { turbo_method: :delete }%>
+<% else %>
+    <%= button_to 'Sign in with Github', '/auth/github', :data => {turbo: "false"} %>
+<% end %>
+
 <%= form_with url: static_pages_path, method: :get do |f|%>
     <%= f.label :id%>
     <%= f.text_field :id%>
