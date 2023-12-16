@@ -1,3 +1,4 @@
+OmniAuth.config.logger = Rails.logger
 Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :flickr, ENV['FLICKR_KEY'], ENV['FLICKR_SECRET'], scope: 'read'
+    provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
 end
