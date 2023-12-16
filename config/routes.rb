@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-   root "homes#index"
+   root "static_pages#index"
    resources :static_pages
    get '/auth/github/callback', to: "sessions#create"
    delete '/logout', to: "sessions#delete"
